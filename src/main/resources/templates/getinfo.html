@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting information</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Please, input name and surname of user</h1>
+<form action="#" th:action="@{/getinfo}" th:object="${user}" method="post">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{name}"/></td>
+        </tr>
+        <tr>
+            <td>Surname:</td>
+            <td><input type="text" th:field="*{surname}"/></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Get information</button></td>
+        </tr>
+    </table>
+</form>
+</body>

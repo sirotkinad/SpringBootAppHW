@@ -1,0 +1,50 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Form submition</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Please, input information</h1>
+<form action="#" th:action="@{/user}" th:object="${user}" method="post">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{name}" /></td>
+        </tr>
+        <tr>
+            <td>Surname:</td>
+            <td><input type="text" th:field="*{surname}" /></td>
+        </tr>
+        <tr>
+            <td>Patronymic:</td>
+            <td><input type="text" th:field="*{patronymic}" /></td>
+        </tr>
+        <tr>
+            <td>Age:</td>
+            <td><input type="text" th:field="*{age}" /></td>
+            <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></td>
+        </tr>
+        <tr>
+            <td>Salary:</td>
+            <td><input type="text" th:field="*{salary}" /></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="text" th:field="*{email}" /></td>
+            <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
+        </tr>
+        <tr>
+            <td>Place of work:</td>
+            <td><input type="text" th:field="*{workplace}" /></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Submit</button></td> <td><button type="reset">Reset</button></td>
+        </tr>
+    </table>
+    <a href="/getinfo">Get information about user</a>
+    <p><a href="/fileUpload">Upload information via a file</a></p>
+</form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User's information</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:object = "${user}" class="user">
+    <p><b>Name:</b> <span th:text="*{name}"></span></p>
+    <p><b>Surname:</b> <span th:text="*{surname}"></span></p>
+    <p><b>Patronymic:</b> <span th:text="*{patronymic}"></span></p>
+    <p><b>Age:</b> <span th:text="*{age}"></span></p>
+    <p><b>Salary:</b> <span th:text="*{salary}"></span></p>
+    <p><b>Email:</b> <span th:text="*{email}"></span></p>
+    <p><b>Workplace:</b> <span th:text="*{workplace}"></span></p>
+    <p><b>Current time:</b> <span th:text= "${#calendars.format(#calendars.createNow(), 'dd MMM yyyy HH:mm')}"> </span></p>
+    <p><b>User-Agent:</b><span th:text="${#httpServletRequest.getHeader('User-Agent')}"></span> </p>
+</div>
+<p><a href="/getinfo">Find user</a></p>
+<p><a href="/user">Registration</a></p>
+</body>
